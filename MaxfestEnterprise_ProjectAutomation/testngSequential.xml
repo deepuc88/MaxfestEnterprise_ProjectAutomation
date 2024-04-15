@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite parallel="classes" name="Suite">
+  <test thread-count="2" parallel="classes" name="Test">
+	  <parameter name = "Browser" value = "Chrome"></parameter>
+	  <parameter name = "Url" value = "https://qalegend.com/billing/public/home"></parameter>
+    <classes>
+      <class name="ProjectTestCases.Login"/>
+       <class name="ProjectTestCases.Brand"/> 
+       <class name="ProjectTestCases.Category"/>
+	  <class name="ProjectTestCases.Unit"/>
+	   
+	 <class name="ProjectTestCases.Product"/> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
