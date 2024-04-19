@@ -2,14 +2,53 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="classes" name="Failed suite [Suite]">
   <test thread-count="5" parallel="classes" name="Test(failed)">
-    <parameter name="Url" value="https://qalegend.com/billing/public/home"/>
-    <parameter name="Browser" value="Chrome"/>
     <classes>
+      <class name="ProjectTestCases.Unit">
+        <methods>
+          <include name="extendreportgenerate"/>
+          <include name="closereport"/>
+          <include name="addUnit"/>
+          <include name="searchUnit"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ProjectTestCases.Unit -->
+      <class name="ProjectTestCases.Product">
+        <methods>
+          <include name="extendreportgenerate"/>
+          <include name="closereport"/>
+          <include name="afterTest"/>
+          <include name="searchProduct"/>
+          <include name="addProduct"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- ProjectTestCases.Product -->
+      <class name="ProjectTestCases.Login">
+        <methods>
+          <include name="extendreportgenerate"/>
+          <include name="closereport"/>
+          <include name="validLogin"/>
+          <include name="beforeTest"/>
+          <include name="invalidLogin"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- ProjectTestCases.Login -->
+      <class name="ProjectTestCases.Brand">
+        <methods>
+          <include name="extendreportgenerate"/>
+          <include name="closereport"/>
+          <include name="addBrand"/>
+          <include name="afterTest"/>
+          <include name="searchBrand"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- ProjectTestCases.Brand -->
       <class name="ProjectTestCases.Category">
         <methods>
           <include name="extendreportgenerate"/>
           <include name="closereport"/>
           <include name="searchCategory"/>
+          <include name="addCategory"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
         </methods>

@@ -24,14 +24,20 @@ public class WaitUtility {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 
-	public void explicitWait(WebElement[] driver2, int seconds) {
+	public void elementToBeClickable(By driver2, int seconds) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-		// wait.until(ExpectedConditions.elementToBeClickable((By) driver2));
-		wait.until(ExpectedConditions.visibilityOfAllElements(driver2));
+		wait.until(ExpectedConditions.elementToBeClickable((By) driver2));
+
+	}
+
+	public void waitAlert(int seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+		wait.until(ExpectedConditions.alertIsPresent());
+
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void fluentWait1() {
+	public void waitAlertPresent() {
 		// Declare and initialise a fluent wait
 		FluentWait wait = new FluentWait(driver)
 				// Specify the timout of the wait

@@ -54,7 +54,7 @@ public class PomBrand {
 	}
 	
 	public void clickBrandMenu() throws InterruptedException {
-		//wait.explicitWait(driver, 20);
+		
 		wait.normalWait(1000);
 		action.click(brand);
 	}

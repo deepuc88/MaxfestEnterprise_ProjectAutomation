@@ -33,13 +33,12 @@ public class Category extends ExtentTestManager {
 		BrowserUtility objutil = new BrowserUtility();
 		driver = objutil.baseDriver();
 		wait = new WaitUtility(driver);
-		//wait.normalWait(14000);
-
+		
 		objCategory = new PomCategory(driver);
 		objCategory.clickCategoryMenu();
 
 		objCategory.addCategory();
-		//wait.normalWait(1000);
+		
 		objCategory.categoryNameSendkeys("DP124");
 		objCategory.categoryCodeSendkeys("DP");
 		objCategory.saveCategory();
@@ -51,7 +50,7 @@ public class Category extends ExtentTestManager {
 		System.out.println("Passed : Category added");
 		test1.log(Status.PASS, " Add Catgeory");
 		
-		//wait.normalWait(2000);
+		
 	}
 
 	@Test(priority = 6, enabled = true, description = "Verify that user is able to search Category")
@@ -62,9 +61,9 @@ public class Category extends ExtentTestManager {
 		String categoryTableValueExpct = objConfigReader.readConfigFile("categorySearch");
 
 		objSearch.categorySearchInput(categoryTableValueExpct);
-		//wait.normalWait(7000);
+		
 		String categoryTableValueActl = objSearch.getTextCategoryTable();
-		//wait.normalWait(6000);
+		
 		System.out.println(categoryTableValueActl);
 
 		Assert.assertEquals(categoryTableValueActl, categoryTableValueExpct);

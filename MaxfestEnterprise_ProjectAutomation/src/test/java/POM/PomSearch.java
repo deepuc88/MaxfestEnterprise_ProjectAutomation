@@ -72,13 +72,13 @@ public class PomSearch {
 	
 	public void categorySearchInput(String category) throws InterruptedException {
 		action.sendkeys(categorySearch, category);
-		wait.normalWait(8000);
-		wait.normalWait(7000);
+		wait.normalWait(9000);
+		wait.normalWait(6000);
 		
 	}
 	
 	public String getTextCategoryTable() throws InterruptedException {
-		
+		wait.normalWait(3000);
 		String text = categoryTableValue.getText();
 		return text;
 	}
